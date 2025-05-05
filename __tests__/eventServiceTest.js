@@ -43,6 +43,7 @@ describe('Orders processor Tests', () => {
         const result  = await processEvent(json);
 
         expect(client.query).toHaveBeenNthCalledWith(1, 'SELECT Id, Name FROM Account WHERE  Name IN ($1)', ['Jessica', 'Will', 'Elizabeth']);
+        expect(client.query).toHaveBeenNthCalledWith(2, 'SELECT Id, StartTime, EndTime, RewardPoints FROM RewardsConfig');
 
         expect(result[0].name).toBe('Jessica');
         expect(result[0].totalRewards).toBe(22);

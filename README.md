@@ -11,9 +11,9 @@ Fooda is going to start rewarding our users for purchases. Every time you buy wi
 ## Installation
 Step-by-step instructions to set up the project locally:
 1. Clone the repository: `git clone https://github.com/rigaman/Fooda.git`
-2. Navigate to the project directory: `cd repository-name`
+2. Navigate to the project directory: `cd Fooda`
 3. Install dependencies: `npm install` (or equivalent for your tech stack, e.g., `pip install -r requirements.txt` for Python)
-4. Configure environment variables (if applicable): Copy `.env.example` to `.env` and update the values.
+4. Run tests `npm test`
 
 ## Usage
 How to run or use the project:
@@ -25,12 +25,13 @@ How to run or use the project:
 A brief overview of the folder structure:
 ```
 ├── src/                # Source code
-├── tests/              # Test files
+├── __tests__/          # Test files
 ├── .gitignore          # Ignored files for Git
 ├── README.md           # This file
-├── datalayer           # application objects responsible for managing data access and storage
-├── processor           # application objects accesesing datalayer and containing business logic
-├── controllers         # application objects responsible for managing data access and storage
+├── datalayer/          # application objects responsible for managing data access and storage
+├── processor/          # application objects accesesing datalayer and containing business logic
+├── service/            # application objects responsible for accsing processor layer and serving json to applications frontend
+├── sql/                # contains sql script to create postgres database
 └── package.json        # Project metadata and dependencies (or equivalent)
 ```
 
@@ -49,5 +50,5 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 For questions or feedback, reach out to:
-- Maintainer: [Your Name](mailto:p.plekhanov@gmail.com)
-- Project Link: [GitHub Repository](https://github.com/rigaman/Fooda)
+- Maintainer: [Philip Plekhanov](mailto:p.plekhanov@gmail.com)
+- Project Link: [Fooda Test Project Repository](https://github.com/rigaman/Fooda)
