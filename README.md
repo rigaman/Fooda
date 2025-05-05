@@ -4,10 +4,13 @@
 Fooda is going to start rewarding our users for purchases. Every time you buy with Fooda you will get "points". Points can be redeemed for discounts on future purchases. Reward points are calculated on the following schedule:
 
 ## Features
-- Feature 1: Description of the first feature.
-- Feature 2: Description of the second feature.
-- Add more features as needed.
-
+- eventService processes event json: 
+- Checks if accounts in the event json exist.
+- Adds accounts if accounts don't exist in the database  
+- Resolves orders with accounts and adds orders to the order table.
+- Calculates order rewards based on business logic 
+- Generates a report containing each customer with total rewards and average rewards per order.
+- Report output should order users by total rewards most to least.
 ## Installation
 Step-by-step instructions to set up the project locally:
 1. Clone the repository: `git clone https://github.com/rigaman/Fooda.git`

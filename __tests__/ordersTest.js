@@ -53,7 +53,7 @@ describe('Orders processor Tests', () => {
             expect(error.message).toBe('Orders array is required');
         }
     });
-    it('it should fail becaus eorders is empty', async () => {
+    it('it should fail because orders is empty', async () => {
 
         const orders = getOrders();
         const savedOrders = getSavedOrders();
@@ -62,9 +62,32 @@ describe('Orders processor Tests', () => {
 
         const customerMap = new Map(); // empty customer map
         try {
-            const data = await processOrders(orders, customerMap );
+            const data = await processOrders(orders, null );
         } catch (error) {
+
             expect(error.message).toBe('Account map is required');
         }
+    });
+    it('it shuld only return orders for existing customers', async () => {
+
+        const orders = getOrders();
+        const savedOrders = getSavedOrders();
+
+        orders.push({
+            action: "new_order",
+            customer: "Bill",
+            amount: 9,
+            timestamp: "2020-07-01T12:20:00-05:00",
+            reward: 3
+        });
+
+        client.query.mockResolvedValueOnce({ rows: savedOrders});
+
+        const customerMap = getCustomerMap();
+
+        const data = await processOrders(orders, customerMap );
+        expect(client.query).toHaveBeenCalled();
+        expect(data).toBeInstanceOf(Array);
+        expect(data.length).toBe(4);
     });
 });

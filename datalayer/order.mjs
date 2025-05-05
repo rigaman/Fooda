@@ -15,4 +15,11 @@ export async function insertOrders(orders) {
 
     return client.query(query);
 }
+export async function getOrdersByCustomerIds(customerIds) {
+
+    const query = `SELECT Id, "Account", "Amount", "Timestamp", "RewardAmount" 
+                    FROM Order WHERE "Account" IN (${customerIds.join(',')})`; 
+
+    return client.query(query);
+}
 

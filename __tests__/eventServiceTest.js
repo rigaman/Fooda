@@ -38,7 +38,9 @@ describe('Orders processor Tests', () => {
         client.query.mockResolvedValueOnce({ rows: accounts });
 
         client.query.mockResolvedValueOnce({ rows: rewardsConfig });
-        client.query.mockResolvedValueOnce({ rows: orders }); 
+       //client.query.mockResolvedValueOnce({ rows: orders }); 
+        // Mock the query to return the expected orders
+        client.query.mockResolvedValue({ rows: orders });
 
         const result  = await processEvent(json);
 
