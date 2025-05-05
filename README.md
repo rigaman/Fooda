@@ -1,7 +1,7 @@
-# Project Name
+# Fooda Test
 
 ## Description
-A brief overview of what this project does and its purpose. Explain the problem it solves or the value it provides.
+Fooda is going to start rewarding our users for purchases. Every time you buy with Fooda you will get "points". Points can be redeemed for discounts on future purchases. Reward points are calculated on the following schedule:
 
 ## Features
 - Feature 1: Description of the first feature.
@@ -10,7 +10,7 @@ A brief overview of what this project does and its purpose. Explain the problem 
 
 ## Installation
 Step-by-step instructions to set up the project locally:
-1. Clone the repository: `git clone https://github.com/username/repository-name.git`
+1. Clone the repository: `git clone https://github.com/rigaman/Fooda.git`
 2. Navigate to the project directory: `cd repository-name`
 3. Install dependencies: `npm install` (or equivalent for your tech stack, e.g., `pip install -r requirements.txt` for Python)
 4. Configure environment variables (if applicable): Copy `.env.example` to `.env` and update the values.
@@ -26,9 +26,11 @@ A brief overview of the folder structure:
 ```
 ├── src/                # Source code
 ├── tests/              # Test files
-├── docs/               # Documentation
 ├── .gitignore          # Ignored files for Git
 ├── README.md           # This file
+├── datalayer           # application objects responsible for managing data access and storage
+├── processor           # application objects accesesing datalayer and containing business logic
+├── controllers         # application objects responsible for managing data access and storage
 └── package.json        # Project metadata and dependencies (or equivalent)
 ```
 
@@ -47,5 +49,5 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 For questions or feedback, reach out to:
-- Maintainer: [Your Name](mailto:your.email@example.com)
-- Project Link: [GitHub Repository](https://github.com/username/repository-name)
+- Maintainer: [Your Name](mailto:p.plekhanov@gmail.com)
+- Project Link: [GitHub Repository](https://github.com/rigaman/Fooda)

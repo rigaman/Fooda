@@ -1,6 +1,6 @@
 import pg from 'pg';
 const { Pool, Client } = pg;
-import { processEvent } from '../controllers/eventController.mjs';
+import { processEvent } from '../service/eventService.mjs';
 import { getJson, getSavedOrders, getRewardsConfig, getAccounts } from '../mocks/testJson.mjs';
 
 getRewardsConfig
